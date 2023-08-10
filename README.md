@@ -18,10 +18,8 @@ This method of assessing an update's criticality based solely on the highest CVS
 
 # Instructions for Use:
 1. Set up OpenCVE API credentials:
-	
- ○ Obtain an OpenCVE username and password (https://www.opencve.io/welcome).
-	
- ○ Add these credentials as environment variables in your shell configuration file (e.g., .bashrc or .zshrc):
+	○ Obtain an OpenCVE username and password (https://www.opencve.io/welcome).
+	○ Add these credentials as environment variables in your shell configuration file (e.g., .bashrc or .zshrc):
 		
 		    export OPENCVE_USERNAME="your_username"
 		    export OPENCVE_PASSWORD="your_password"
