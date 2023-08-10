@@ -17,25 +17,26 @@ To determine the highest CVSS score addressed within a specific update an admin 
 This method of assessing an update's criticality based solely on the highest CVSS score addressed by the update is not necessarily the best or most effective way of managing update deadlines. The risk of a vulnerability should always be assessed within the context of an environment. It can however, be used to help provide general guidance on the criticality of an update if CVSS scores are accepted as general guidance within an environment.
 
 # Instructions for Use:
-	1. Set up OpenCVE API credentials:
-		○ Obtain an OpenCVE username and password (https://www.opencve.io/welcome).
-		○ Add these credentials as environment variables in your shell configuration file (e.g., .bashrc or .zshrc):
+1. Set up OpenCVE API credentials:
+	○ Obtain an OpenCVE username and password (https://www.opencve.io/welcome).
+	○ Add these credentials as environment variables in your shell configuration file (e.g., .bashrc or .zshrc):
 		
 		    export OPENCVE_USERNAME="your_username"
 		    export OPENCVE_PASSWORD="your_password"
 		
-		○ Restart your terminal or run source ~/.zshrc to apply the changes.
-	2. Download and run the script:
-		○ Download the script and save it as a .py file (e.g., retrieve-cvss-scores.py).
-		○ Open a terminal and navigate to the directory containing the script.
-		○ Run the script using the command: python3 retrieve-cvss-scores.py.
-	3. Follow the prompts:
-		○ When prompted, enter the URL of the webpage you want to scrape for CVEs.
-		○ The script will display the CVSS v3 scores for each CVE, count the number of CVEs with and without scores, identify          the highest scoring CVE, and provide a qualitative rating.
+	○ Restart your terminal or run 'source ~/.zshrc' to apply the changes.
+2. Download and run the script:
+	○ Download the script and save it as a .py file (e.g., retrieve-cvss-scores.py).
+	○ Open a terminal and navigate to the directory containing the script.
+	○ Run the script using the command: python3 retrieve-cvss-scores.py.
+3. Follow the prompts:
+	○ When prompted, enter the URL of the webpage you want to scrape for CVEs.
+	○ The script will display the CVSS v3 scores for each CVE, count the number of CVEs with and without scores, 		identify the highest scoring CVE, and provide a qualitative rating.
 
 # Example Output:
     Enter the URL to scrape for CVEs: https://support.apple.com/en-us/HT213844
     Number of CVEs found on the webpage: 35
+    
     CVEs found on the webpage:
     {'CVE-2023-36495', 'CVE-2023-34241', 'CVE-2023-32441', 'CVE-2023-38565', 'CVE-2023-32443', 'CVE-2023-38603', 'CVE-2023-  38258', 'CVE-2023-32381', 'CVE-2023-38593', 'CVE-2023-38259', 'CVE-2023-32364', 'CVE-2023-38598', 'CVE-2023-28321', 'CVE-2023-36854', 'CVE-2023-34425', 'CVE-2023-2953', 'CVE-2023-38604', 'CVE-2023-35983', 'CVE-2023-32429', 'CVE-2023-38421', 'CVE-2023-38571', 'CVE-2023-35993', 'CVE-2023-28319', 'CVE-2023-32418', 'CVE-2023-38601', 'CVE-2023-32416', 'CVE-2023-28322', 'CVE-2023-28320', 'CVE-2023-32433', 'CVE-2023-38590', 'CVE-2023-32442', 'CVE-2023-37285', 'CVE-2023-38606', 'CVE-2023-32444', 'CVE-2023-38602'}
     OpenCVE data for CVEs:
@@ -82,9 +83,7 @@ This method of assessing an update's criticality based solely on the highest CVS
     Highest CVSS v3 score: 9.8
     Qualitative rating: Critical
 
-![image](https://github.com/jp-cpe/retrieve-cvss-scores/assets/38440687/24150a2c-05a5-4ed6-acd0-01a69d6c728c)
-
 # Future Considerations:
-	- Slack Bot?
-	- Alerts?
-  - More details?
+- Slack Bot?
+- Alerts?
+- More details?
