@@ -17,7 +17,7 @@ To determine the highest CVSS score addressed within a specific update an admin 
 This method of assessing an update's criticality based solely on the highest CVSS score addressed by the update is not necessarily the best or most effective way of managing update deadlines. The risk of a vulnerability should always be assessed within the context of an environment. It can however, be used to help provide general guidance on the criticality of an update if CVSS scores are accepted as general guidance within an environment.
 
 # Instructions for Use:
-## Set up OpenCVE API credentials:
+### Set up OpenCVE API credentials:
 1. Obtain an OpenCVE username and password (https://www.opencve.io/welcome).
 	○ Add these credentials as environment variables in your shell configuration file (e.g., .bashrc or .zshrc):
 		
