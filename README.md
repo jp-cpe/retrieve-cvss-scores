@@ -19,17 +19,18 @@ This method of assessing an update's criticality based solely on the highest CVS
 # Instructions for Use:
 ### Set up OpenCVE API credentials:
 1. Obtain an OpenCVE username and password (https://www.opencve.io/welcome).
-	○ Add these credentials as environment variables in your shell configuration file (e.g., .bashrc or .zshrc):
+2. Add these credentials as environment variables in your shell configuration file (e.g., .bashrc or .zshrc):
 		
 		    export OPENCVE_USERNAME="your_username"
 		    export OPENCVE_PASSWORD="your_password"
 		
-	○ Restart your terminal or run 'source ~/.zshrc' to apply the changes.
-3. Download and run the script:
-	○ Download the script and save it as a .py file (e.g., retrieve-cvss-scores.py).
-	○ Open a terminal and navigate to the directory containing the script.
-	○ Run the script using the command: python3 retrieve-cvss-scores.py.
-4. Follow the prompts:
+3. Restart your terminal or run 'source ~/.zshrc' to apply the changes.
+### Download and run the script:
+1. Download the script and save it as a .py file (e.g., retrieve-cvss-scores.py).
+2. Open a terminal and navigate to the directory containing the script.
+3. Run the script using the command:
+   			'python3 retrieve-cvss-scores.py'.
+5. Follow the prompts:
 	○ When prompted, enter the URL of the webpage you want to scrape for CVEs.
 	○ The script will display the CVSS v3 scores for each CVE, count the number of CVEs with and without scores, 		identify the highest scoring CVE, and provide a qualitative rating.
 
