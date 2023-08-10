@@ -24,15 +24,14 @@ This method of assessing an update's criticality based solely on the highest CVS
 		    export OPENCVE_USERNAME="your_username"
 		    export OPENCVE_PASSWORD="your_password"
 		
-3. Restart your terminal or run 'source ~/.zshrc' to apply the changes.
+3. Restart your terminal or run `source ~/.zshrc` to apply the changes.
 ### Download and run the script:
 1. Download the script and save it as a .py file (e.g., retrieve-cvss-scores.py).
 2. Open a terminal and navigate to the directory containing the script.
-3. Run the script using the command:
-   			'python3 retrieve-cvss-scores.py'.
-5. Follow the prompts:
-	○ When prompted, enter the URL of the webpage you want to scrape for CVEs.
-	○ The script will display the CVSS v3 scores for each CVE, count the number of CVEs with and without scores, 		identify the highest scoring CVE, and provide a qualitative rating.
+3. Run the script using the command: `python3 retrieve-cvss-scores.py`.
+### Follow the prompts:
+1. When prompted, enter the URL of the webpage you want to scrape for CVEs.
+2. The script will display the CVSS v3 scores for each CVE, count the number of CVEs with and without scores, 		identify the highest scoring CVE, and provide a qualitative rating.
 
 # Example Output:
     Enter the URL to scrape for CVEs: https://support.apple.com/en-us/HT213844
