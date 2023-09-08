@@ -63,6 +63,10 @@ def get_opencve_data(cve_list):
         print(f"Error occurred while fetching OpenCVE data: {e}")
         return None
 
+# Initialize highest_score_cve and highest_score
+highest_score_cve = None
+highest_score = None
+
 if __name__ == "__main__":
     url = input("Enter the URL to scrape for CVEs: ")
     
@@ -71,27 +75,32 @@ if __name__ == "__main__":
         opencve_data = get_opencve_data(cve_list)
         print("OpenCVE data for CVEs:")
         for cve, data in opencve_data.items():
-            print(f"CVSS v3 for CVE {cve}: {data['cvss']['v3']}")
+            cvss_v3 = data['cvss']['v3']
+            
+            if cvss_v3 is not None and cvss_v3 != "N/A":
+                cvss_v3_float = float(cvss_v3)
+                
+                print(f"CVSS v3 for CVE {cve}: {cvss_v3}")
+                
+                if highest_score_cve is None or cvss_v3_float > highest_score:
+                    highest_score_cve = cve
+                    highest_score = cvss_v3_float
+            else:
+                print(f"CVSS v3 for CVE {cve}: N/A")
         
-        num_cves_with_scores = sum(1 for cve in opencve_data.values() if cve['cvss']['v3'] != "N/A")
+        num_cves_with_scores = sum(1 for cve in opencve_data.values() if cve['cvss']['v3'] is not None and cve['cvss']['v3'] != "N/A")
         num_cves_without_scores = len(opencve_data) - num_cves_with_scores
 
         print(f"\nNumber of CVEs with scores: {num_cves_with_scores}")
         print(f"Number of CVEs without scores: {num_cves_without_scores}")
 
-        highest_score_cve = max(opencve_data, key=lambda cve: float(opencve_data[cve]['cvss']['v3']) if opencve_data[cve]['cvss']['v3'] != "N/A" else 0)
-        highest_score = opencve_data[highest_score_cve]['cvss']['v3']
-
-        print(f"\nCVE with the highest CVSS v3 score: {highest_score_cve}")
-        print(f"Highest CVSS v3 score: {highest_score}")
-
-        if highest_score == "N/A":
+        if highest_score_cve is None:
             print("Qualitative rating: No score available")
-        elif float(highest_score) >= 9.0:
+        elif highest_score >= 9.0:
             print("Qualitative rating: Critical")
-        elif 7.0 <= float(highest_score) < 9.0:
+        elif 7.0 <= highest_score < 9.0:
             print("Qualitative rating: High")
-        elif 4.0 <= float(highest_score) < 7.0:
+        elif 4.0 <= highest_score < 7.0:
             print("Qualitative rating: Medium")
         else:
             print("Qualitative rating: Low")
