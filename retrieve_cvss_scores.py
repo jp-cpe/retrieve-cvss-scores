@@ -41,7 +41,7 @@ def scrape_cve_from_webpage(url):
 
 def get_opencve_data(cve_list):
     opencve_data = {}
-    base_url = "https://www.opencve.io/api/cve/"
+    base_url = "https://app.opencve.io/api/cve/"
     
     try:
         for cve in cve_list:
